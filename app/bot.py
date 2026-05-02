@@ -1,11 +1,15 @@
 import logging
+import os
 
+from dotenv import load_dotenv
 from pyrogram import Client, filters
 
 from sessions import (
     create_session,
     add_file
 )
+
+load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -14,11 +18,11 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-API_ID = 37725631
-API_HASH = "1d8359471a44311bd343b9cf4a024f98"
-BOT_TOKEN = "8623239572:AAFY0uJPYiIFaMfLG0Unr82PFAzJtUs57zU"
+API_ID = int(os.environ["API_ID"])
+API_HASH = os.environ["API_HASH"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = os.environ.get("BASE_URL", "http://127.0.0.1:8000")
 
 app = Client(
     "zip_bot",

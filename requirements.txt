@@ -11,6 +11,7 @@ pydantic==2.12.5
 pydantic_core==2.41.5
 Pyrogram==2.0.106
 PySocks==1.7.1
+python-dotenv==1.1.0
 starlette==1.0.0
 TgCrypto==1.2.5
 typing-inspection==0.4.2

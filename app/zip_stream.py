@@ -1,13 +1,17 @@
 import asyncio
+import os
 import zipstream
 
+from dotenv import load_dotenv
 from pyrogram import Client
 
 from app.sessions import get_files
 
-API_ID = 37725631
-API_HASH = "1d8359471a44311bd343b9cf4a024f98"
-BOT_TOKEN = "8623239572:AAFY0uJPYiIFaMfLG0Unr82PFAzJtUs57zU"
+load_dotenv()
+
+API_ID = int(os.environ["API_ID"])
+API_HASH = os.environ["API_HASH"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 
 
 def generate_zip_stream(session_id):
